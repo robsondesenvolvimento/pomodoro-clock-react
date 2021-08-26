@@ -16,10 +16,6 @@ class PomodoroClock extends React.Component {
         this.handlerResetClick = this.handlerResetClick.bind(this);
     }
 
-    componentDidMount(){
-        //this.calculoTempo(60 * 1);
-    }
-
     calculoTempo(duration){        
         var timer = duration, minutes, seconds;
         this.intervalClock = setInterval(() => {
@@ -63,7 +59,7 @@ class PomodoroClock extends React.Component {
         if (this.state.sessao === "Inicie uma sessão de trabalho") {
             this.setState({ sessao: "Sessão de trabalho" });
             clearInterval(this.intervalClock);
-            this.calculoTempo(60 * 1);
+            this.calculoTempo(60 * 25);
         }
     }
 
@@ -80,7 +76,7 @@ class PomodoroClock extends React.Component {
         });
 
         clearInterval(this.intervalClock);
-        this.calculoTempo(60 * 1);
+        this.calculoTempo(60 * 5);
     }
 
     render(){
