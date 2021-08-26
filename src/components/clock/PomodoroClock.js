@@ -86,9 +86,13 @@ class PomodoroClock extends React.Component {
                 <h1>Pomodoro clock</h1>
                 <h2>{this.state.sessao}</h2>
                 <h3>{this.state.clock}</h3>
-                <button className="button" onClick={this.handlerIniciarClick}>Iniciar</button>&nbsp;|&nbsp;
-                <button className="button" onClick={this.handlerPauseClick}>Pausar</button>&nbsp;|&nbsp;
-                <button className="button" onClick={this.handlerResetClick}>Reset</button>
+
+                <div className="bnt-group">
+                    <button className="button" onClick={this.handlerIniciarClick}>Iniciar</button>&nbsp;|&nbsp;
+                    <button className="button" onClick={this.handlerPauseClick}>Pausar</button>&nbsp;|&nbsp;
+                    <button className="button" onClick={this.handlerResetClick}>Reset</button>
+                </div>
+                
             </div>
         )
     }
