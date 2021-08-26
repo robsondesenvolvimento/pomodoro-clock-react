@@ -1,4 +1,5 @@
 import React from 'react';
+import './PomodoroClock.css';
 
 class PomodoroClock extends React.Component {
 
@@ -76,7 +77,7 @@ class PomodoroClock extends React.Component {
         });
 
         clearInterval(this.intervalClock);
-        this.calculoTempo(60 * 5);
+        this.calculoTempo(60 * 25);
     }
 
     render(){
@@ -85,9 +86,9 @@ class PomodoroClock extends React.Component {
                 <h1>Pomodoro clock</h1>
                 <h2>{this.state.sessao}</h2>
                 <h3>{this.state.clock}</h3>
-                <button onClick={this.handlerIniciarClick}>Iniciar</button>
-                <button onClick={this.handlerPauseClick}>Pausar</button>
-                <button onClick={this.handlerResetClick}>Reset</button>
+                <button className="button" onClick={this.handlerIniciarClick}>Iniciar</button>&nbsp;|&nbsp;
+                <button className="button" onClick={this.handlerPauseClick}>Pausar</button>&nbsp;|&nbsp;
+                <button className="button" onClick={this.handlerResetClick}>Reset</button>
             </div>
         )
     }
