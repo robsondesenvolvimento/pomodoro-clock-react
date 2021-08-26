@@ -12,7 +12,8 @@ class PomodoroClock extends React.Component {
             intervalo: false,
             sessao: "Inicie uma sessão de trabalho",
             clock: "",
-            pause: false
+            pause: false,
+            tempo: 25
         }
 
         this.handlerIniciarClick = this.handlerIniciarClick.bind(this);
@@ -71,7 +72,7 @@ class PomodoroClock extends React.Component {
         if (this.state.sessao === "Inicie uma sessão de trabalho") {
             this.setState({ sessao: "Sessão de trabalho" });
             clearInterval(this.intervalClock);
-            this.calculoTempo(60 * 1);
+            this.calculoTempo(60 * this.state.tempo);
         }
     }
 
@@ -92,7 +93,7 @@ class PomodoroClock extends React.Component {
         });
 
         clearInterval(this.intervalClock);
-        this.calculoTempo(60 * 25);
+        this.calculoTempo(60 * this.state.tempo);
     }
 
     render(){
@@ -103,9 +104,9 @@ class PomodoroClock extends React.Component {
                 <h3>{this.state.clock}</h3>
 
                 <div className="bnt-group">
-                    <button className="button" onClick={this.handlerIniciarClick}>Iniciar</button>&nbsp;|&nbsp;
-                    <button className="button" onClick={this.handlerPauseClick}>Pausar</button>&nbsp;|&nbsp;
-                    <button className="button" onClick={this.handlerResetClick}>Reset</button>
+                    <button className="button" onClick={this.handlerIniciarClick} >Iniciar</button>&nbsp;|&nbsp;
+                    <button className="button" onClick={this.handlerPauseClick} >Pausar</button>&nbsp;|&nbsp;
+                    <button className="button" onClick={this.handlerResetClick} >Reset</button>
                 </div>
                 
             </div>
